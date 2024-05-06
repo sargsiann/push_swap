@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:51:40 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/04 20:21:35 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/06 19:52:56 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ static int check_argument(char *argument)
 	{
 		if (ft_isdigit(argument[i]))
 			num_flag++;
-		if (!(argument[i] == 45 && ft_isdigit(argument[i + 1])))
+		if (!(argument[i] == 45 && ft_isdigit(argument[i + 1])) 
+			&& !(argument[i] == 43 && ft_isdigit(argument[i + 1])))
 			return (0);
-		if (!ft_isdigit(argument[i]) && !argument[i] == 32 && argument[i] != 45)
+		if (!ft_isdigit(argument[i]) && !argument[i] == 32 
+			&& argument[i] != 45 && argument[i] != 43)
 			return (0);
 		if (argument[i] == 32 && argument[i + 1] == 32)
 			return (0);
