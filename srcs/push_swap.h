@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:44:33 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/06 19:45:22 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/09 20:15:56 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,10 @@ void	ss(t_node **a, t_node **b);
 void	pa(t_node **a, t_node **b);
 void	pb(t_node **a, t_node **b);
 t_node	*new_node(int number);
+void	fill_stack_a(t_node **a, char **argv);
+int		check_is_integer(char *argument);
+int		check_for_dublicates(t_node **a);
+int		move(char *argument);
+void	print_stack(t_node **a);
 
 # endif

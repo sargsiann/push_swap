@@ -1,44 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   check_for_dublicates.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/04 19:44:16 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/09 20:23:11 by dasargsy         ###   ########.fr       */
+/*   Created: 2024/05/06 20:34:44 by dasargsy          #+#    #+#             */
+/*   Updated: 2024/05/09 20:17:15 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	print_stack(t_node **a)
+static int check_dublicates(t_node *node, t_node **a)
 {
 	t_node *tmp;
 
 	tmp = *a;
-	while (tmp)
+
+	while (tmp != node)
 	{
-		printf("%d\n", tmp->val);
+		if (tmp->val == node->val)
+			return (0);
 		tmp = tmp->next;
 	}
+	return (1);
 }
 
-int main(int argc, char **argv)
+int	check_for_dublicates(t_node **a)
 {
-	t_node *a;
-	t_node *b;
-	
-	a = NULL;
-	b = NULL;
-	if (argc > 1 && validate_argv(argv))
+	t_node *tmp;
+
+	tmp = NULL;
+	if (!a || !(*a))	
+		return (0);
+	tmp = *a;
+	while (tmp)
 	{
-		fill_stack_a(&a, argv);
-		//print_stack(&a);
-		if (!check_for_dublicates(&a))
-			return (1);
-		printf("OK");
+		if (!check_dublicates(tmp, a))
+		{
+			write(2, "Dublicates in arguments", 24);
+			return (0);
+		}
+		tmp = tmp->next;
 	}
-	else
-		return (1);
-}
+	return (1);
+}	

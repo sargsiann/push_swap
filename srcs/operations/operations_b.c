@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 18:42:29 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/06 19:56:25 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:18:29 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,11 @@ void rb(t_node **b)
 {
 	t_node	*t;
 
-	if (!b || !(*b)->next)
+	t = NULL;
+	if (!b || !(*b) || !(*b)->next)
 		return ;
+	t = *b;
+	*b = (*b)->next;
 	while (1)
 	{
 		if (t->next == NULL)
