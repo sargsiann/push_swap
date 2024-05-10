@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:27:23 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/09 20:24:43 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/09 20:26:22 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,4 @@ void	fill_stack_a(t_node **a, char **argv)
 		}
 		i++;
 	}
-	print_stack(a);
 }

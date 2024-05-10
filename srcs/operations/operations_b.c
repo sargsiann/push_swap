@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 18:42:29 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/06 20:18:29 by dasargsy         ###   ########.fr       */
+/*   Created: 2024/05/10 14:49:05 by dasargsy          #+#    #+#             */
+/*   Updated: 2024/05/10 14:50:03 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,59 +25,66 @@ void	pb(t_node **a, t_node **b)
 	*b = a_tmp;
 }
 
-void sb(t_node **b)
+void	sb(t_node **b)
 {
 	int	tmp;
 
 	tmp = 0;
-	if (!b || (*b) || !(*b)->next)
+	if (!b || !(*b)->next)
 		return ;
 	tmp = (*b)->val;
 	(*b)->val = (*b)->next->val;
 	(*b)->next->val = tmp;
 }
 
-void rb(t_node **b)
+void	rb(t_node **b)
 {
 	t_node	*t;
+	int		tmp;
 
 	t = NULL;
-	if (!b || !(*b) || !(*b)->next)
+	tmp = 0;
+	if (!b || !(*b)->next)
 		return ;
+	tmp = (*b)->val;
 	t = *b;
-	*b = (*b)->next;
 	while (1)
 	{
 		if (t->next == NULL)
 		{
-			t->next = *b;
-			*b = t;
+			t->val = tmp;
 			break;
 		}
+		t->val = t->next->val;
 		t = t->next;
 	}
 }
 
-void rrb(t_node **b)
+void	rrb(t_node **b)
 {
 	t_node	*t;
 	t_node	*tmp;
+	int		tmp_val;
 
-	tmp = NULL;
 	t = NULL;
+	tmp = NULL;
+	tmp_val = 0;
 	if (!b || !(*b)->next)
 		return ;
 	t = *b;
-	*b = (*b)->next;
 	tmp = *b;
 	while (1)
 	{
+		if (t->next == NULL)
+		{
+			t->val = tmp_val;
+			break;
+		}
 		if (t->next->next == NULL)
 		{
-			tmp = t->next;
-			t->next = NULL;
-			tmp->next = *b;
-			*b = tmp;
+			tmp_val = t->val;
+			t->val = t->next->val;
+			t->next->val = tmp_val;
 			break;
 		}
 		t = t->next;

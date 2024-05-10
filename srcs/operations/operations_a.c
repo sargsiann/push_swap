@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:48:42 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/06 19:55:33 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:48:04 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,42 +40,47 @@ void	sa(t_node **a)
 void	ra(t_node **a)
 {
 	t_node	*t;
+	int		tmp;
 
 	t = NULL;
+	tmp = 0;
 	if (!a || !(*a)->next)
 		return ;
+	tmp = (*a)->val;
 	t = *a;
-	*a = (*a)->next;
 	while (1)
 	{
 		if (t->next == NULL)
 		{
-			t->next = *a;
-			*a = t;
+			t->val = tmp;
 			break;
 		}
+		t->val = t->next->val;
 		t = t->next;
 	}
 }
 
 void	rra(t_node **a)
 {
-	t_node	*t1;
-	t_node	*t2;
+	t_node *t;
+	t_node *tmp;
 
-	t1 = NULL;
-	t2 = NULL;
+	t = NULL;
+	tmp = NULL;
 	if (!a || !(*a)->next)
 		return ;
-	t1 = *a;
-	*a = (*a)->next;
-	t2 = *a;
+	tmp = *a;
+	t = *a;
 	while (1)
 	{
-		if (t2->next == NULL)
+		if (t->next->next == NULL)
 		{
-			t2->next = t1;
+			tmp = t->next;
+			t->next = NULL;
+			tmp->next = *a;
+			*a = tmp;
 			break;
 		}
+		t = t->next;
 	}
 }
