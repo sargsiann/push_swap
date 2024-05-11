@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 14:49:05 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/10 14:50:03 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:52:53 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 void	pb(t_node **a, t_node **b)
 {
-	t_node *a_tmp;
+	t_node *b_tmp;
 
-	a_tmp = NULL;
-	if (!a || !b || !(*a))
+	if (!a || !*b || !b)
 		return ;
-	a_tmp = *a;
-	*a = (*a)->next;
-	a_tmp->next = *b;
-	*b = a_tmp;
+	b_tmp = *b;
+	*b = (*b)->next;
+	b_tmp->next = *a;
+	*a = b_tmp;
 }
 
 void	sb(t_node **b)

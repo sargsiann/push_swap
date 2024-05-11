@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:51:40 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/09 20:14:32 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/11 20:23:04 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,7 @@ int	validate_argv(char **argv)
 	{
 		//printf("argv[%d] = %s\n", i, argv[i]);
 		if (!check_argument(argv[i]))
-		{
-			write(2,"invalid argument\n", 17);
 			return (0);
-		}
 		if (!check_is_integer(argv[i]))
 			return (0);
 		i++;

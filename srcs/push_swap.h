@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:44:33 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/09 20:15:56 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/11 20:10:38 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,17 @@ int		check_is_integer(char *argument);
 int		check_for_dublicates(t_node **a);
 int		move(char *argument);
 void	print_stack(t_node **a);
+void	free_stack(t_node **a);
+void	solve(t_node **a, t_node **b);
+void	tiny_sort_for_3(t_node **a);
+void	tiny_sort_for_4(t_node **a, t_node **b);
+int		stack_size(t_node **stack);
+int     is_sorted(t_node **a);
+int		find_smallest_node(t_node **a);
+void	push_smallest_to_b(t_node **a, t_node **b, int min_index);
+void	tiny_sort_for_5(t_node **a, t_node **b);
+
+
+
 
 # endif

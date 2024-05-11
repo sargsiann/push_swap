@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:44:16 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/10 14:48:55 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/11 20:24:44 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	print_stack(t_node **a)
 	tmp = *a;
 	while (tmp)
 	{
-		printf("%d\n", tmp->val);
+		printf("%d", tmp->val);
 		tmp = tmp->next;
 	}
 }
@@ -34,17 +34,21 @@ int main(int argc, char **argv)
 	if (argc > 1 && validate_argv(argv))
 	{
 		fill_stack_a(&a, argv);
-		print_stack(&a);
-		// sa(&a); swapping is okay
-		printf("\n\n\n");
-		//ra(&a); rotating is okay
-		//rra(&a); reverse rotating is okay
-		//print_stack(&a);
-
 		if (!check_for_dublicates(&a))
+		{
+			write(2, "Error\n", 6);
 			return (1);
-		printf("OK");
+		}
+		if (!is_sorted(&a))
+			solve(&a, &b);
+		print_stack(&a);
+		free_stack(&a);
+		return (0);
 	}
 	else
+	{
+		write(2, "Error\n", 6);
 		return (1);
+	}
+	return (0);
 }

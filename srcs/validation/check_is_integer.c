@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 18:43:46 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/07 20:11:06 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/11 20:15:43 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,8 @@ int	check_is_integer(char *argument)
 	{
 		if (argument[i] == '-' || ft_isdigit(argument[i]))
 		{
-			if (!check_by_lenght(argument + i) || !check_by_value(argument + i))	
-			{
-				write(2, "value is too big\n", 17);
+			if (!check_by_lenght(argument + i) || !check_by_value(argument + i))
 				return (0);
-			}
 			i += move(argument + i);
 			if (!argument[i])
 				return (1);

@@ -6,26 +6,25 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:48:42 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/10 14:48:04 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:52:40 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pa(t_node **a, t_node **b)
+void	pa(t_node **a, t_node **b) // okay
 {
-	t_node *b_tmp;
+	t_node *a_tmp;
 
-	b_tmp = NULL;
-	if (!a || !b || !(*b))
+	if (!a || !b || !*a)
 		return ;
-	b_tmp = *b;
-	*b = (*b)->next;
-	b_tmp->next = *a;
-	*a = b_tmp;
+	a_tmp = *a;
+	*a = (*a)->next;
+	a_tmp->next = *b;
+	*b = a_tmp;
 }
 
-void	sa(t_node **a)
+void	sa(t_node **a) // okay
 {
 	int	tmp;
 
@@ -37,7 +36,7 @@ void	sa(t_node **a)
 	(*a)->next->val = tmp;
 }
 
-void	ra(t_node **a)
+void	ra(t_node **a) // okay
 {
 	t_node	*t;
 	int		tmp;
@@ -60,7 +59,7 @@ void	ra(t_node **a)
 	}
 }
 
-void	rra(t_node **a)
+void	rra(t_node **a) // okay
 {
 	t_node *t;
 	t_node *tmp;

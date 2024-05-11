@@ -1,6 +1,6 @@
 NAME = push_swap
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall  -Werror
 
 CC = cc 
 
@@ -19,7 +19,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJS)
 	$(LIB_MAKE)
-	$(CC) $(FLAGS) $(OBJS) $(LIB_PATH) -o $(NAME)
+	$(CC) $(FLAGS) -fsanitize=address $(OBJS) $(LIB_PATH) -o $(NAME)
 
 clean : $(OBJS)
 	$(MAKE) -C libft clean
@@ -30,5 +30,5 @@ fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all
-
+	
 .PHONY = $(NAME) all re clean fclean
