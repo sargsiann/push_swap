@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 20:00:57 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/11 20:01:52 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:58:42 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,12 @@ void	push_smallest_to_b(t_node **a, t_node **b, int index)
 	{
 		if ((*a)->val == smallest)
 			break;
-		if (index <= stack_size(a) / 2)
+		if (index < stack_size(a) / 2)
 			ra(a);
 		else
 			rra(a);
+		if (is_sorted(a))
+			return ;
 	}
-	pa(a, b);
+	pb(a, b);
 }

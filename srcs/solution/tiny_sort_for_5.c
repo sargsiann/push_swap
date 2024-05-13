@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 20:05:07 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/11 20:11:29 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:59:09 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	tiny_sort_for_5(t_node **a, t_node **b)
 
 	min_index = find_smallest_node(a);
 	push_smallest_to_b(a, b, min_index);
+	if (is_sorted(a) == 1)
+		return ;
 	tiny_sort_for_4(a, b);
-	pb(a, b);
+	pa(a, b);
 }

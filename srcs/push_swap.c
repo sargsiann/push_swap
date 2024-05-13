@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:44:16 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/11 20:24:44 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/13 18:01:32 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 		}
 		if (!is_sorted(&a))
 			solve(&a, &b);
-		print_stack(&a);
+		//print_stack(&a);
 		free_stack(&a);
 		return (0);
 	}

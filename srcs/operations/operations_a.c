@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:48:42 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/11 19:52:40 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:48:11 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 void	pa(t_node **a, t_node **b) // okay
 {
-	t_node *a_tmp;
+	t_node *b_tmp;
 
-	if (!a || !b || !*a)
+	b_tmp = NULL;
+	if (!a || !*b || !b)
 		return ;
-	a_tmp = *a;
-	*a = (*a)->next;
-	a_tmp->next = *b;
-	*b = a_tmp;
+	b_tmp = *b;
+	*b = (*b)->next;
+	b_tmp->next = *a;
+	*a = b_tmp;
+	
+	write(1, "pa\n", 3);
 }
 
 void	sa(t_node **a) // okay
@@ -34,6 +37,7 @@ void	sa(t_node **a) // okay
 	tmp = (*a)->val;
 	(*a)->val = (*a)->next->val;
 	(*a)->next->val = tmp;
+	write(1, "sa\n", 3);
 }
 
 void	ra(t_node **a) // okay
@@ -57,6 +61,7 @@ void	ra(t_node **a) // okay
 		t->val = t->next->val;
 		t = t->next;
 	}
+	write(1, "ra\n", 3);
 }
 
 void	rra(t_node **a) // okay
@@ -82,4 +87,5 @@ void	rra(t_node **a) // okay
 		}
 		t = t->next;
 	}
+	write(1, "rra\n", 4);
 }

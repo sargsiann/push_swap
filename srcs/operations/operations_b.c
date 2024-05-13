@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 14:49:05 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/11 19:52:53 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:48:15 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 void	pb(t_node **a, t_node **b)
 {
-	t_node *b_tmp;
+	t_node *a_tmp;
 
-	if (!a || !*b || !b)
+	a_tmp = NULL;
+	if (!a || !b || !*a)
 		return ;
-	b_tmp = *b;
-	*b = (*b)->next;
-	b_tmp->next = *a;
-	*a = b_tmp;
+	a_tmp = *a;
+	*a = (*a)->next;
+	a_tmp->next = *b;
+	*b = a_tmp;
+
+	write(1, "pb\n", 3);
 }
 
 void	sb(t_node **b)
@@ -34,6 +37,7 @@ void	sb(t_node **b)
 	tmp = (*b)->val;
 	(*b)->val = (*b)->next->val;
 	(*b)->next->val = tmp;
+	write(1, "sb\n", 3);
 }
 
 void	rb(t_node **b)
@@ -57,6 +61,7 @@ void	rb(t_node **b)
 		t->val = t->next->val;
 		t = t->next;
 	}
+	write(1, "rb\n", 3);
 }
 
 void	rrb(t_node **b)
@@ -88,4 +93,5 @@ void	rrb(t_node **b)
 		}
 		t = t->next;
 	}
+	write(1, "rrb\n", 4);
 }
