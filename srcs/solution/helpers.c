@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 20:00:57 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/13 17:58:42 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/14 19:57:54 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,24 @@ void	push_smallest_to_b(t_node **a, t_node **b, int index)
 			return ;
 	}
 	pb(a, b);
+}
+
+int square_root(int n)
+{
+	int i;
+
+	i = 0;
+	while (i * i < n)
+		i++;
+	return (i);
+}
+
+int	log_base_2(int n)
+{
+	int i;
+
+	i = 0;
+	while (i * 2 < n)
+		i++;
+	return (i);
 }

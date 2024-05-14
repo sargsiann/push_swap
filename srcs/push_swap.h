@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:44:33 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/14 17:16:54 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/14 19:54:31 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ void	push_smallest_to_b(t_node **a, t_node **b, int min_index);
 void	tiny_sort_for_5(t_node **a, t_node **b);
 void	butterfly_sort(t_node **a, t_node **b);
 t_node	*last_node(t_node *node);
+int		square_root(int n);
+int		log_base_2(int n);
 
 # endif
