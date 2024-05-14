@@ -6,11 +6,11 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 20:27:23 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/09 20:26:22 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/13 20:14:29 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int move(char *argument)
 {

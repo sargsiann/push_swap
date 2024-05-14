@@ -6,11 +6,11 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:21:05 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/11 17:51:03 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/13 20:13:17 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	free_stack(t_node **a)
 {
