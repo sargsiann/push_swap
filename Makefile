@@ -22,8 +22,9 @@ LIB_PATH = libft/libft.a
 all : $(NAME)
 
 checker : $(CHECKER_OBJS)
+	$(OBJS)
 	$(LIB_MAKE)
-	$(CC) $(FLAGS) $(CHECKER_OBJS) $(LIB_PATH) -o checker
+	$(CC) $(FLAGS) $(CHECKER_OBJS) $(OBJS) $(LIB_PATH) -o checker
 
 $(NAME) : $(OBJS)
 	$(LIB_MAKE)
