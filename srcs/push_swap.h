@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:44:33 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/14 19:54:31 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/16 18:37:53 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ void	butterfly_sort(t_node **a, t_node **b);
 t_node	*last_node(t_node *node);
 int		square_root(int n);
 int		log_base_2(int n);
+void	bubble_sort(int *array, int size);
 
 # endif

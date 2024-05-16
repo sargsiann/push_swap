@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:51:40 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/12 17:41:13 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/16 18:49:00 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int check_argument(char *argument)
 		if (argument[i] == 32 && argument[i + 1] == 32)
 			return (0);
 		if ((argument[i] == 45 || argument[i] == 43) && (
-			i -1 != -1 || argument[i - 1] != 32))
+			i - 1 != -1 || argument[i - 1] != 32))
 			return (0);
 		i++;
 	}
