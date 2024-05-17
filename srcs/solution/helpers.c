@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 20:00:57 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/17 13:53:58 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/17 19:27:58 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,20 +65,20 @@ int find_smallest_node(t_node **a)
 	return (index);
 }
 
-void	push_smallest_to_b(t_node **a, t_node **b, int index)
+void	push_val_to_stack(t_node **a, t_node **b, int index)
 {	
-	int smallest;
+	int val;
 	t_node *tmp;
 	int		i;
 
 	tmp = *a;
 	i = 0;
-	smallest = 0;
+	val = 0;
 	while (tmp)
 	{
 		if (i == index)
 		{
-			smallest = tmp->val;
+			val = tmp->val;
 			break ;
 		}
 		i++;
@@ -86,7 +86,7 @@ void	push_smallest_to_b(t_node **a, t_node **b, int index)
 	}
 	while (1)
 	{
-		if ((*a)->val == smallest)
+		if ((*a)->val == val)
 			break;
 		if (index < stack_size(a) / 2)
 			ra(a, 1);
@@ -96,6 +96,37 @@ void	push_smallest_to_b(t_node **a, t_node **b, int index)
 			return ;
 	}
 	pb(a, b, 1);
+}
+
+void	push_val_to_stack_a(t_node **b, t_node **a, int index)
+{	
+	int val;
+	t_node *tmp;
+	int		i;
+
+	tmp = *b;
+	i = 0;
+	val = 0;
+	while (tmp)
+	{
+		if (i == index)
+		{
+			val = tmp->val;
+			break ;
+		}
+		i++;
+		tmp = tmp->next;
+	}
+	while (1)
+	{
+		if ((*b)->val == val)
+			break;
+		if (index <= stack_size(b) / 2)
+			rb(b, 1);
+		else
+			rrb(b, 1);
+	}
+	pa(a, b, 1);
 }
 
 int square_root(int n)

@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:44:16 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/17 13:53:48 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/17 18:24:53 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int main(int argc, char **argv)
 	
 	a = NULL;
 	b = NULL;
-	if (argc > 1 && validate_argv(argv))
+	if (argc == 1)
+		return (0);
+	if (validate_argv(argv))
 	{
 		fill_stack_a(&a, argv);
 		if (!check_for_dublicates(&a))

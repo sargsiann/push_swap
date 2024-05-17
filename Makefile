@@ -1,6 +1,6 @@
 NAME = push_swap
 
-CFLAGS = -Wall  -Werror
+CFLAGS = -Wall -Werror -Wextra
 
 CC = cc 
 
@@ -40,7 +40,7 @@ clean : $(OBJS)
 fclean : clean
 	rm -rf $(LIB_PATH)
 	rm -rf $(NAME)
-	rm -rf checker_dir/checker
+	rm -rf checker
 
 re : fclean all
 	

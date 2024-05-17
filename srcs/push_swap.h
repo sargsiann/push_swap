@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:44:33 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/17 13:46:08 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/17 19:54:31 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_node
 	struct s_node *next;
 	
 }	t_node;
+
 
 int		validate_argv(char **argv);
 void	ra(t_node **a, int flag);
@@ -49,12 +50,13 @@ void	tiny_sort_for_4(t_node **a, t_node **b);
 int		stack_size(t_node **stack);
 int     is_sorted(t_node **a);
 int		find_smallest_node(t_node **a);
-void	push_smallest_to_b(t_node **a, t_node **b, int min_index);
+void	push_val_to_stack(t_node **a, t_node **b, int min_index);
 void	tiny_sort_for_5(t_node **a, t_node **b);
 void	butterfly_sort(t_node **a, t_node **b);
 t_node	*last_node(t_node *node);
 int		square_root(int n);
 int		log_base_2(int n);
 void	bubble_sort(int *array, int size);
+void	push_val_to_stack_a(t_node **b, t_node **a, int max_index);
 
 # endif

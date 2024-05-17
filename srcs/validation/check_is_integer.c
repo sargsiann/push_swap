@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 18:43:46 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/11 20:15:43 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/17 18:16:22 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 static	int check_by_lenght(char *digit_start)
 {
 	int	i;
+	int	k;
 
 	i = 0;
-	while (digit_start[i] && 
-		(ft_isdigit(digit_start[i]) || digit_start[i] == '-'))
+	k = 0;
+	while (digit_start[i] == '0')
 		i++;
-	if (i > 10)
+	while (digit_start[i + k] && 
+		(ft_isdigit(digit_start[i + k]) || digit_start[i] == '-'))
+		k++;
+	if (k > 10)
 		return (0);
 	return (1);
 }

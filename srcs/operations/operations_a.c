@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:48:42 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/17 14:51:38 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/17 18:01:54 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	pa(t_node **a, t_node **b, int flag) // okay
 	*b = (*b)->next;
 	b_tmp->next = *a;
 	*a = b_tmp;
-	
 	if (flag)
 		write(1, "pa\n", 3);
 }
