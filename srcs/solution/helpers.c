@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 20:00:57 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/14 19:57:54 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/17 13:53:58 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,13 @@ void	push_smallest_to_b(t_node **a, t_node **b, int index)
 		if ((*a)->val == smallest)
 			break;
 		if (index < stack_size(a) / 2)
-			ra(a);
+			ra(a, 1);
 		else
-			rra(a);
+			rra(a, 1);
 		if (is_sorted(a))
 			return ;
 	}
-	pb(a, b);
+	pb(a, b, 1);
 }
 
 int square_root(int n)
@@ -116,4 +116,16 @@ int	log_base_2(int n)
 	while (i * 2 < n)
 		i++;
 	return (i);
+}
+
+void	print_stack(t_node **a)
+{
+	t_node *tmp;
+
+	tmp = *a;
+	while (tmp)
+	{
+		printf("%d ", tmp->val);
+		tmp = tmp->next;
+	}
 }

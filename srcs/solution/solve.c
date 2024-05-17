@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:41:50 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/14 17:17:47 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/17 11:28:53 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	solve(t_node **a, t_node **b)
 	{
 		tmp = *a;
 		if (tmp->val > tmp->next->val)
-			sa(a);
+			sa(a, 1);
 	}
 	else if (stack_size(a) == 3)
 		tiny_sort_for_3(a);	

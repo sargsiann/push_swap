@@ -6,13 +6,13 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:48:42 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/13 17:48:11 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/17 14:51:38 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pa(t_node **a, t_node **b) // okay
+void	pa(t_node **a, t_node **b, int flag) // okay
 {
 	t_node *b_tmp;
 
@@ -24,30 +24,32 @@ void	pa(t_node **a, t_node **b) // okay
 	b_tmp->next = *a;
 	*a = b_tmp;
 	
-	write(1, "pa\n", 3);
+	if (flag)
+		write(1, "pa\n", 3);
 }
 
-void	sa(t_node **a) // okay
+void	sa(t_node **a, int flag) // okay
 {
 	int	tmp;
 
 	tmp = 0;
-	if (!a || !(*a)->next)
+	if (!a || !(*a) || !(*a)->next)
 		return ;
 	tmp = (*a)->val;
 	(*a)->val = (*a)->next->val;
 	(*a)->next->val = tmp;
-	write(1, "sa\n", 3);
+	if (flag)
+		write(1, "sa\n", 3);
 }
 
-void	ra(t_node **a) // okay
+void	ra(t_node **a, int flag) // okay
 {
 	t_node	*t;
 	int		tmp;
 
 	t = NULL;
 	tmp = 0;
-	if (!a || !(*a)->next)
+	if (!a || !(*a) || !(*a)->next)
 		return ;
 	tmp = (*a)->val;
 	t = *a;
@@ -61,17 +63,18 @@ void	ra(t_node **a) // okay
 		t->val = t->next->val;
 		t = t->next;
 	}
-	write(1, "ra\n", 3);
+	if (flag)
+		write(1, "ra\n", 3);
 }
 
-void	rra(t_node **a) // okay
+void	rra(t_node **a, int flag) // okay
 {
 	t_node *t;
 	t_node *tmp;
 
 	t = NULL;
 	tmp = NULL;
-	if (!a || !(*a)->next)
+	if (!a || !(*a) || !(*a)->next)
 		return ;
 	tmp = *a;
 	t = *a;
@@ -87,5 +90,6 @@ void	rra(t_node **a) // okay
 		}
 		t = t->next;
 	}
-	write(1, "rra\n", 4);
+	if (flag)
+		write(1, "rra\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 15:54:47 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/13 17:52:17 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/17 11:24:55 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,22 @@ void	tiny_sort_for_3(t_node **a)
 	{
 		if (tmp->next->val > tmp->next->next->val)
 		{
-			ra(a);
-			sa(a);
+			ra(a, 1);
+			sa(a, 1);
 		}
 		else
-			ra(a);
+			ra(a, 1);
 	}
 	else if (tmp->val > tmp->next->val && tmp->next->val < tmp->next->next->val)
-		sa(a);
+		sa(a, 1);
 	else if (tmp->val < tmp->next->val)
 	{
 		if (tmp->val > tmp->next->next->val)
-			rra(a);
+			rra(a, 1);
 		else 
 		{
-			rra(a);
-			sa(a);
+			rra(a, 1);
+			sa(a, 1);
 		}
 	}
 }

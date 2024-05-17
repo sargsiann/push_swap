@@ -6,23 +6,11 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 19:44:16 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/14 17:16:51 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/17 13:53:48 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	print_stack(t_node **a)
-{
-	t_node *tmp;
-
-	tmp = *a;
-	while (tmp)
-	{
-		printf("%d ", tmp->val);
-		tmp = tmp->next;
-	}
-}
+#include "srcs/push_swap.h"
 
 int main(int argc, char **argv)
 {

@@ -6,13 +6,13 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 14:49:05 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/13 17:48:15 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/17 14:45:29 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pb(t_node **a, t_node **b)
+void	pb(t_node **a, t_node **b, int flag)
 {
 	t_node *a_tmp;
 
@@ -24,30 +24,32 @@ void	pb(t_node **a, t_node **b)
 	a_tmp->next = *b;
 	*b = a_tmp;
 
-	write(1, "pb\n", 3);
+	if (flag)
+		write(1, "pb\n", 3);
 }
 
-void	sb(t_node **b)
+void	sb(t_node **b, int flag)
 {
 	int	tmp;
 
 	tmp = 0;
-	if (!b || !(*b)->next)
+	if (!b || !(*b) || !(*b)->next)
 		return ;
 	tmp = (*b)->val;
 	(*b)->val = (*b)->next->val;
 	(*b)->next->val = tmp;
-	write(1, "sb\n", 3);
+	if (flag)
+		write(1, "sb\n", 3);
 }
 
-void	rb(t_node **b)
+void	rb(t_node **b, int flag)
 {
 	t_node	*t;
 	int		tmp;
 
 	t = NULL;
 	tmp = 0;
-	if (!b || !(*b)->next)
+	if (!b || !(*b) || !(*b)->next)
 		return ;
 	tmp = (*b)->val;
 	t = *b;
@@ -61,10 +63,11 @@ void	rb(t_node **b)
 		t->val = t->next->val;
 		t = t->next;
 	}
-	write(1, "rb\n", 3);
+	if (flag)
+		write(1, "rb\n", 3);
 }
 
-void	rrb(t_node **b)
+void	rrb(t_node **b, int flag)
 {
 	t_node	*t;
 	t_node	*tmp;
@@ -73,7 +76,7 @@ void	rrb(t_node **b)
 	t = NULL;
 	tmp = NULL;
 	tmp_val = 0;
-	if (!b || !(*b)->next)
+	if (!b || !(*b) || !(*b)->next)
 		return ;
 	t = *b;
 	tmp = *b;
@@ -93,5 +96,6 @@ void	rrb(t_node **b)
 		}
 		t = t->next;
 	}
-	write(1, "rrb\n", 4);
+	if (flag)
+		write(1, "rrb\n", 4);
 }

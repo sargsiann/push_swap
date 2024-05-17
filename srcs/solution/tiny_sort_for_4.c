@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 18:08:33 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/13 18:00:51 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/17 11:28:16 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void	tiny_sort_for_4(t_node **a, t_node **b)
 	{
 		if (stack_size(b) == 1)
 		{
-			pa(a, b);
+			pa(a, b, 1);
 			return ;
 		}
 		return ;
 	}
 	tiny_sort_for_3(a);
-	pa(a, b);
+	pa(a, b, 1);
 }
