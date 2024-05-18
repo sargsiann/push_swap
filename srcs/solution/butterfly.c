@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:09:47 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/17 19:27:11 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/18 17:25:41 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	 butterfly_sort(t_node **a, t_node **b)
 		else
 			ra(a, 1);
 	}
-	print_stack(b);
 	from_b_to_a(a, b);
+	print_stack(a);
 	free(array);
 }

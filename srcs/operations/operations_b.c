@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 14:49:05 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/17 14:45:29 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/18 17:16:53 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,27 +71,20 @@ void	rrb(t_node **b, int flag)
 {
 	t_node	*t;
 	t_node	*tmp;
-	int		tmp_val;
 
 	t = NULL;
 	tmp = NULL;
-	tmp_val = 0;
 	if (!b || !(*b) || !(*b)->next)
 		return ;
 	t = *b;
-	tmp = *b;
-	while (1)
+	while (t->next)
 	{
-		if (t->next == NULL)
-		{
-			t->val = tmp_val;
-			break;
-		}
 		if (t->next->next == NULL)
 		{
-			tmp_val = t->val;
-			t->val = t->next->val;
-			t->next->val = tmp_val;
+			tmp = t->next;
+			t->next = NULL;
+			tmp->next = *b;
+			*b = tmp;
 			break;
 		}
 		t = t->next;

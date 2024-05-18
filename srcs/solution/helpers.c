@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 20:00:57 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/17 19:27:58 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/18 17:02:41 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,15 +117,12 @@ void	push_val_to_stack_a(t_node **b, t_node **a, int index)
 		i++;
 		tmp = tmp->next;
 	}
-	while (1)
-	{
-		if ((*b)->val == val)
-			break;
-		if (index <= stack_size(b) / 2)
+	if (index < stack_size(b) / 2)
+		while ((*b)->val != val)
 			rb(b, 1);
-		else
+	else
+		while ((*b)->val != val)
 			rrb(b, 1);
-	}
 	pa(a, b, 1);
 }
 
