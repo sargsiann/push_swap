@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 11:15:39 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/26 17:05:21 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/26 17:33:28 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	ss(t_node **a, t_node **b, int flag);
 void	rr(t_node **a, t_node **b, int flag);
 void	rrr(t_node **a, t_node **b, int flag);
 int		is_sorted(t_node **a);
-
+void	solve(t_node **a, t_node **b);
+int		find_max_index(t_node **stack);
+int		find_min_index(t_node **stack);
 
 #endif
