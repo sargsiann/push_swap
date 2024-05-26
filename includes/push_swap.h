@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 11:15:39 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/26 16:50:22 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/26 17:05:21 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,14 @@ void	pa(t_node **a, t_node **b, int flag);
 void	sa(t_node **a, int flag);
 void	ra(t_node **a, int flag);
 void	rra(t_node **a, int flag);
+void	pb(t_node **a, t_node **b, int flag);
+void	sb(t_node **b, int flag);
+void	rb(t_node **b, int flag);
+void	rrb(t_node **b, int flag);
+void	ss(t_node **a, t_node **b, int flag);
+void	rr(t_node **a, t_node **b, int flag);
+void	rrr(t_node **a, t_node **b, int flag);
+int		is_sorted(t_node **a);
 
 
 #endif
