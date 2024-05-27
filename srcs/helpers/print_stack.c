@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 15:13:18 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/26 15:25:09 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/27 15:33:53 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	print_stack(t_node **a)
 	tmp = *a;
 	while (tmp)
 	{
-		printf("%d\n", tmp->value);
+		printf("%d ", tmp->value);
 		tmp = tmp->next;
 	}
+	printf("\n");
 }

@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:41:06 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/26 17:46:54 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/27 16:01:27 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	push_val_to_stack(t_node **from, t_node **to, int index, int flag)
 		}
 	}
 	if (flag)
-		pa(from, to, 1);
-	else
 		pb(from, to, 1);
+	else
+		pa(from, to, 1);
 }
