@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   math.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/26 15:13:18 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/27 16:03:07 by dasargsy         ###   ########.fr       */
+/*   Created: 2024/05/29 17:11:20 by dasargsy          #+#    #+#             */
+/*   Updated: 2024/05/29 17:59:57 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	print_stack(t_node **a)
+int	square_root(int num)
 {
-	t_node	*tmp;
+	int	i;
 
-	tmp = *a;
-	while (tmp)
+	i = 0;
+	while (1)
 	{
-		printf("%d ", tmp->value);
-		tmp = tmp->next;
+		if (i * i == num)
+			return (i);
+		else if (i * i > num)
+			return (i - 1);
+		i++;
 	}
-	printf("\n");
+}
+
+int	logarithm2(int num)
+{
+	int	i;
+
+	i = 0;
+	while (num)
+	{
+		num  = num / 2;
+		i++;
+	}
+	return (i);
 }

@@ -6,9 +6,10 @@ CC = cc
 
 SRCS = $(shell find srcs -name "*.c") push_swap.c
 
-OBJS = $(patsubst %.c, %.o, $(SRCS))
+OBJS = $(SRCS:.c=.o)
 
 %.c:%.o
+	$(CC) $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 

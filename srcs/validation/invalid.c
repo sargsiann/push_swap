@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 12:04:25 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/26 15:44:34 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:53:51 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	is_valid(char **argv)
 	while (argv[i])
 	{
 		j = 0;
+		if (argv[i][j] == 0)
+			return 0;
 		while (argv[i][j])
 		{
 			if (!statement(argv[i][j]))

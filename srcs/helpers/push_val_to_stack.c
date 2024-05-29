@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:41:06 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/27 16:01:27 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/29 19:02:00 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	push_val_to_stack(t_node **from, t_node **to, int index, int flag)
 {
 	int	val;
 
-	val = find_val_by_index(from, index);
+	val = find_val_by_index(from, index); 
 	if (index > stack_size(from) / 2)
 	{
 		while ((*from)->value != val)
@@ -46,7 +46,7 @@ void	push_val_to_stack(t_node **from, t_node **to, int index, int flag)
 	}
 	else
 	{
-		while ((*from)->value != val && index != 0)
+		while ((*from)->value != val)
 		{
 			if (flag)
 				ra(from, 1);
@@ -54,8 +54,4 @@ void	push_val_to_stack(t_node **from, t_node **to, int index, int flag)
 				rb(from, 1);
 		}
 	}
-	if (flag)
-		pb(from, to, 1);
-	else
-		pa(from, to, 1);
 }

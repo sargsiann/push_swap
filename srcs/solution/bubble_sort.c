@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   bubble_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/26 15:13:18 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/27 16:03:07 by dasargsy         ###   ########.fr       */
+/*   Created: 2024/05/29 16:58:50 by dasargsy          #+#    #+#             */
+/*   Updated: 2024/05/29 17:05:43 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	print_stack(t_node **a)
+void	bubble_sort(int	*arr, int size)
 {
-	t_node	*tmp;
+	int	flag;
+	int	i;
+	int	tmp;
 
-	tmp = *a;
-	while (tmp)
+	flag = 1;
+	i = 0;
+	tmp = 0;
+	while (flag)
 	{
-		printf("%d ", tmp->value);
-		tmp = tmp->next;
+		flag = 0;
+		i = 0;
+		while (i < size - 1)
+		{
+			if (arr[i] > arr[i + 1])
+			{
+				tmp = arr[i];
+				arr[i] = arr[i + 1];
+				arr[i + 1] = tmp;
+				flag = 1;		
+			}
+			i++;
+		}
 	}
-	printf("\n");
 }

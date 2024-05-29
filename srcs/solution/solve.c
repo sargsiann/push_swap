@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:03:54 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/26 18:36:52 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/29 19:02:18 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,10 @@ void	sort_four(t_node **a, t_node **b)
 
 	min = find_min_index(a);
 	push_val_to_stack(a, b, min, 1);
+	pb(a, b, 1);
 	if (is_sorted(a))
 	{
-		pb(a, b, 1);
+		pa(a, b, 1);
 		return ;
 	}
 	sort_three(a);
@@ -58,9 +59,10 @@ void	sort_five(t_node **a, t_node **b)
 
 	min = find_min_index(a);
 	push_val_to_stack(a, b, min, 1);
+	pb(a, b, 1);
 	if (is_sorted(a))
 	{
-		pb(a, b, 1);
+		pa(a, b, 1);
 		return ;
 	}
 	sort_four(a, b);
@@ -82,4 +84,6 @@ void	solve(t_node **a, t_node **b)
 		sort_four(a, b);
 	if (stack_size(a) == 5)
 		sort_five(a, b);
+	if (stack_size(a) >= 6)
+		butterfly_sort(a, b);
 }
