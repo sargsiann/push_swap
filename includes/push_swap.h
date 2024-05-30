@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 11:15:39 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/29 17:19:18 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/30 19:57:55 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		is_sorted(t_node **a);
 void	solve(t_node **a, t_node **b);
 int		find_max_index(t_node **stack);
 int		find_min_index(t_node **stack);
-void	push_val_to_stack(t_node **from, t_node **to, int index, int flag);
+void	push_val_to_stack(t_node **from, int index, int flag);
 void	butterfly_sort(t_node **a, t_node **b);
 void	bubble_sort(int	*arr, int size);
 int		square_root(int num);

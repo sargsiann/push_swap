@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 16:55:01 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/29 19:05:10 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:35:05 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void push_from_b_to_a(t_node **b, t_node **a)
 {
 	while ((*b))
 	{
-		push_val_to_stack(b, a, find_max_index(b), 0);
+		push_val_to_stack(b, find_max_index(b), 0);
 		pa(a, b, 1);
 	}
 }
@@ -41,25 +41,30 @@ void	butterfly_sort(t_node **a, t_node **b)
 {
 	int	arr[stack_size(a)];
 	int	i;
+	int	j;
+	int	len;
 
 	fill_and_sort_arr(a, arr);
+	j = 0;
 	i = square_root(stack_size(a)) + logarithm2(stack_size(a));
-	while ((*a))
+	len = stack_size(a);
+	while (stack_size(a) > 0 && j < len)
 	{
-		if (i > stack_size(a))
-			i--;
-		if ((*a)->value <= arr[i])
+		if ((*a)->value <= arr[j])
+		{
+			pb(a, b, 1);
+			j++;
+		}
+		else if ((*a)->value <= arr[j + i])
 		{
 			pb(a, b, 1);
 			rb(b, 1);
-			i++;
+			j++;
 		}
-		else if ((*a)->value <= arr[i + 1])
-		{
-			pb(a, b, 1);
-			i++;
-		}
+		else
+			ra(a, 1);
+		if (j + i >= len)
+			i--;
 	}
 	push_from_b_to_a(b, a);
-	print_stack(a);
 }

@@ -6,13 +6,13 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 11:14:55 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/29 16:49:38 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:59:54 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_node	*a;
 	t_node	*b;
@@ -33,5 +33,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	solve(&a, &b);
+	free_stack(&a);
+	free_stack(&b);
 	return (0);
 }

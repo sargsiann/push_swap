@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:03:54 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/29 19:02:18 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:53:39 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	sort_four(t_node **a, t_node **b)
 	int	min;
 
 	min = find_min_index(a);
-	push_val_to_stack(a, b, min, 1);
+	push_val_to_stack(a, min, 1);
 	pb(a, b, 1);
 	if (is_sorted(a))
 	{
@@ -58,7 +58,7 @@ void	sort_five(t_node **a, t_node **b)
 	int	min;
 
 	min = find_min_index(a);
-	push_val_to_stack(a, b, min, 1);
+	push_val_to_stack(a, min, 1);
 	pb(a, b, 1);
 	if (is_sorted(a))
 	{
@@ -73,17 +73,17 @@ void	solve(t_node **a, t_node **b)
 {
 	if (is_sorted(a))
 		return ;
-	if (stack_size(a) == 2)
+	else if (stack_size(a) == 2)
 	{
 		if ((*a)->value > (*a)->next->value)
 			sa(a,1);
 	}
-	if (stack_size(a) == 3)
+	else if (stack_size(a) == 3)
 		sort_three(a);
-	if (stack_size(a) == 4)
+	else if (stack_size(a) == 4)
 		sort_four(a, b);
-	if (stack_size(a) == 5)
+	else if (stack_size(a) == 5)
 		sort_five(a, b);
-	if (stack_size(a) >= 6)
+	else
 		butterfly_sort(a, b);
 }
