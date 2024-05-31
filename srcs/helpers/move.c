@@ -6,13 +6,13 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 13:26:38 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/25 13:27:39 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:39:39 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int move(char *str, int i)
+int	move(char *str, int i)
 {
 	int	k;
 

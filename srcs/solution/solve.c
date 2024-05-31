@@ -6,12 +6,11 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 17:03:54 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/30 21:56:14 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:04:27 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
 
 void	sort_three(t_node **a)
 {
@@ -20,20 +19,20 @@ void	sort_three(t_node **a)
 	max_index = find_max_index(a);
 	if (max_index == 0)
 	{
-		ra(a,1);
+		ra(a, 1);
 		if ((*a)->value > (*a)->next->value)
-			sa(a,1);
+			sa(a, 1);
 	}
 	if (max_index == 1)
 	{
-		rra(a,1);
+		rra(a, 1);
 		if ((*a)->value > (*a)->next->value)
-			sa(a,1);
+			sa(a, 1);
 	}
 	if (max_index == 2)
 	{
 		if ((*a)->value > (*a)->next->value)
-			sa(a,1);
+			sa(a, 1);
 	}
 }
 
@@ -76,7 +75,7 @@ void	solve(t_node **a, t_node **b)
 	else if (stack_size(a) == 2)
 	{
 		if ((*a)->value > (*a)->next->value)
-			sa(a,1);
+			sa(a, 1);
 	}
 	else if (stack_size(a) == 3)
 		sort_three(a);
@@ -85,5 +84,5 @@ void	solve(t_node **a, t_node **b)
 	else if (stack_size(a) == 5)
 		sort_five(a, b);
 	else
-		butterfly_sort(a, b);
+		butterfly_sort(a, b, stack_size(a));
 }

@@ -6,13 +6,13 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 14:28:49 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/26 15:40:59 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:46:54 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static int check_for_index(t_node **stack, int val, int index)
+static int	check_for_index(t_node **stack, int val, int index)
 {
 	t_node	*tmp;
 	int		i;
@@ -33,7 +33,7 @@ int	check_for_doubles(t_node **stack)
 {
 	int		i;
 	t_node	*tmp;
-	
+
 	i = 0;
 	tmp = *stack;
 	if (tmp->next == NULL)

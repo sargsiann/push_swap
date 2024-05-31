@@ -6,11 +6,11 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 16:58:35 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/25 11:34:22 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:46:30 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../../includes/gnl.h"
+#include "../../includes/gnl.h"
 
 static void	s_zero(void *s, size_t n)
 {

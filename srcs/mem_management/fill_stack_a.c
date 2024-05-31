@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 13:03:46 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/26 16:46:24 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:40:22 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	add_element(t_node **a, int val)
 {
-	t_node *node;
-	t_node *tmp;
+	t_node	*node;
+	t_node	*tmp;
 
 	tmp = NULL;
 	node = malloc(sizeof(t_node));
@@ -47,10 +47,10 @@ void	fill_stack_a(t_node **a, char **argv)
 		{
 			if (argv[i][j] == '-' || ft_isdigit(argv[i][j]))
 			{
-				add_element(a,ft_atoi(argv[i]));
+				add_element(a, ft_atoi(argv[i]));
 				j += move(argv[i], j);
 				if (argv[i][j] == 0)
-					break;
+					break ;
 			}
 			j++;
 		}

@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 16:58:50 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/30 20:11:51 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:40:41 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	bubble_sort(int	*arr, int size)
 				tmp = arr[i];
 				arr[i] = arr[i + 1];
 				arr[i + 1] = tmp;
-				flag = 1;		
+				flag = 1;
 			}
 			i++;
 		}

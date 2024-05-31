@@ -6,13 +6,13 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 15:48:01 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/29 18:29:19 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:35:00 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	pa(t_node **a, t_node **b, int flag) // PUSH FROM TOP OF B TO TOP OF A OK
+void	pa(t_node **a, t_node **b, int flag)
 {
 	t_node	*tb;
 
@@ -30,7 +30,7 @@ void	pa(t_node **a, t_node **b, int flag) // PUSH FROM TOP OF B TO TOP OF A OK
 void	sa(t_node **a, int flag) // SWAPS TOP TWO ELEMENTS OF A OK
 {
 	int	tmp;
-	
+
 	tmp = 0;
 	if (!(*a) || !a || !((*a)->next))
 		return ;

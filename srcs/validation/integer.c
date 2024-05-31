@@ -6,15 +6,15 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 11:50:53 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/26 15:10:14 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:36:15 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static int check(char *str, int i)
+static int	check(char *str, int i)
 {
-  	int	k;
+	int	k;
 
 	k = 0;
 	if (ft_atoi(str) > INT_MAX || ft_atoi(str) < INT_MIN)
@@ -38,7 +38,7 @@ int	is_integer(char **argv)
 {
 	int	i;
 	int	j;
-	int num_flag;
+	int	num_flag;
 
 	i = 0;
 	j = 0;
@@ -55,7 +55,7 @@ int	is_integer(char **argv)
 					return (0);
 				j += move(argv[i], j);
 				if (argv[i][j] == 0)
-					break;
+					break ;
 			}
 		}
 		i++;
