@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 16:48:24 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/30 21:51:21 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:30:11 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
+	if (!s1 || !s2)
+		return (-1);
 	while (i < n && s1[i] && s2[i])
 	{
 		if (s1[i] != s2[i])
