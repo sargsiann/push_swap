@@ -6,18 +6,19 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 16:55:01 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/31 17:03:56 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:15:33 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static	void	fill_and_sort_arr(t_node **a, int **arr)
+static	int	*fill_and_sort_arr(t_node **a)
 {
 	t_node	*tmp;
 	int		i;
+	int		*arr;
 
-	(*arr) = malloc(sizeof(int) * stack_size(a));
+	arr = malloc(sizeof(int) * stack_size(a));
 	i = 0;
 	tmp = *a;
 	while (i < stack_size(a))
@@ -27,6 +28,7 @@ static	void	fill_and_sort_arr(t_node **a, int **arr)
 		tmp = tmp->next;
 	}
 	bubble_sort(arr, stack_size(a));
+	return (arr);
 }
 
 static void	push_from_b_to_a(t_node **b, t_node **a)
@@ -38,11 +40,11 @@ static void	push_from_b_to_a(t_node **b, t_node **a)
 	}
 }
 
-static void	init(t_node **a, int *j, int *arr, int *i)
+static void	init(t_node **a, int *j, int **arr, int *i)
 {
 	*j = 0;
 	*i = square_root(stack_size(a)) + logarithm2(stack_size(a));
-	fill_and_sort_arr(a, &arr);
+	(*arr) = fill_and_sort_arr(a);
 }
 
 static void	logic(t_node **a, t_node **b, int *arr)
@@ -57,7 +59,7 @@ void	butterfly_sort(t_node **a, t_node **b, int len)
 	int	i;
 	int	j;
 
-	init(a, &j, arr, &i);
+	init(a, &j, &arr, &i);
 	while (stack_size(a) > 0 && j < len)
 	{
 		if ((*a)->value <= arr[j])

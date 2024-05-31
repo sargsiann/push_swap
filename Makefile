@@ -14,11 +14,11 @@ CHECKER_OBJS = $(CHECKER_SRCS:.c=.o)
 
 all : $(NAME)
 
-%.c:%.o
-	$(CC) $(FLAGS) -c $< -o $@
-
 $(NAME) : $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -fsanitize=address -o push_swap
+
+%.o:%.c
+	$(CC) $(FLAGS) -c $< -o $@
 
 checker : $(CHECKER_OBJS)
 	$(CC) $(FLAGS) $(CHECKER_OBJS) -fsanitize=address -o checker

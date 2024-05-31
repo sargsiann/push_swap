@@ -6,7 +6,7 @@
 /*   By: dasargsy <dasargsy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 11:14:55 by dasargsy          #+#    #+#             */
-/*   Updated: 2024/05/30 20:59:54 by dasargsy         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:06:28 by dasargsy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 	if (!check_for_doubles(&a))
 	{
 		write(2, "Error", 5);
+		free_stack(&a);
 		return (1);
 	}
 	solve(&a, &b);
