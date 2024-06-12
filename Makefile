@@ -12,15 +12,17 @@ CHECKER_SRCS = $(shell find srcs -name "*.c") checker_dir/checker.c
 
 CHECKER_OBJS = $(CHECKER_SRCS:.c=.o)
 
+DEPS = $(shell find includes -name "*.h") Makefile
+
 all : $(NAME)
 
-$(NAME) : $(OBJS)
+$(NAME) : $(OBJS) $(DEPS)
 	$(CC) $(FLAGS) $(OBJS) -fsanitize=address -o push_swap
 
 %.o:%.c
 	$(CC) $(FLAGS) -c $< -o $@
 
-checker : $(CHECKER_OBJS)
+bonus : $(CHECKER_OBJS) $(DEPS)
 	$(CC) $(FLAGS) $(CHECKER_OBJS) -fsanitize=address -o checker
 
 clean : 
